@@ -14,8 +14,7 @@ class Event(models.Model):
     price = models.ForeignKey(StatusPrice, on_delete=models.CASCADE, blank=False, verbose_name='Цена')  # required to field
     description = models.TextField(blank=False, verbose_name='Описание')  # required to field
     photo = models.ImageField(upload_to="event/ivent_img", default='', blank=True, verbose_name='Изображение')  # not required to field
-    is_active = models.BooleanField(default=True)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE, blank=False, verbose_name='Статуы')  # required to field
+    is_active = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'Мероприятие'
