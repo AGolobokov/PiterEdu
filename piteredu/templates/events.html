@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% block title %}События{% endblock %}
+{% block page %}
+<h2> Events </h2>
+{% endblock %}
+
+{% block name %}
+    <h2 align="center">Бесплатные образовательные мероприятия</h2>
+{% endblock %}
+
+{% block card %}
+{% endblock %}
+
+{% block content %}
+        <div class="container event-card-container">
+          <div class="row">
+
+            {% for item in  variable_event %}
+              <div class="col-sm-4">
+              <a href="/events/{{item.id}}">
+              <div class="card event-card text-center">
+                  <!-- Изображение (фон карточки) -->
+                  <img class="card-img" style="height: 300px;" src="{{item.photo.url}}" alt="{{item.name}}">
+                  <div class="card-img-overlay" style="color:white; font-weight:bold;">{{item.name}}  {{item.date}}</div>
+              </div><!-- Конец карточки -->
+              </a>
+              </div>
+            {% endfor %}
+
+          </div>
+        </div>
+{% endblock %}
+

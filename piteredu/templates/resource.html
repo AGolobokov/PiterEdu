@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% block title %}Ресурсы{% endblock %}
+
+{% block page %}
+<h2> Resource </h2>
+{% endblock %}
+
+{% block name %}
+{% endblock %}
+
+{% block card %}
+{% endblock %}
+
+{% block content %}
+        <div class="container resource-card-container">
+          <div class="row">
+            {% for item in  variable_resource %}
+              <div class="col-sm-4">
+                      <div>
+                      <a href="/resource/{{item.id}}">
+                          <div class="card resource-card text-center">
+                              <!-- Изображение (фон карточки) -->
+                              <img class="card-img" style="height: 300px;" src="{{item.photo.url}}" alt="{{item.name}}">
+                          </div><!-- Конец карточки -->
+                      </a>
+                      <h6 align="center">{{item.name}}</h6>
+                  </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+{% endblock %}
+

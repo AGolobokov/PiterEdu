@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+
+{% block title %}Проекты{% endblock %}
+
+{% block page %}
+<h2> Projects </h2>
+{% endblock %}
+
+{% block name %}
+    <h2 align="center">Проекты Образовательного Петербурга</h2>
+    <h6 align="center">На данной странице, вы сможете найти наши мероприятия и другие спецпроекты, которые организовываем.</h6>
+{% endblock %}
+
+{% block card %}
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="container project-container">
+          <div class="row">
+            {% for item in  variable_project %}
+              <div class="col-sm-6">
+                  <h2>{{item.name}}</h2>
+                  <div class="project-item">{{item.description}}</div>
+
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                    </div>
+                    <!--{% if item.image %}
+                        <img src="{{item.image.url}}" alt="">
+                    {% endif %}
+                  {% for item_img in  variable_image %}
+
+                <img src="{{item_img.image.url}}" alt="">
+
+                  {% endfor %}-->
+
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+{% endblock %}
+

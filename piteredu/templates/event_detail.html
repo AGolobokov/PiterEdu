@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block title %}Страница отдельного мероприятия{% endblock %}
+
+{% block page %}
+<h2> Страница отдельного мероприяия </h2>
+{% endblock %}
+
+{% block name %}
+{% endblock %}
+
+{% block card %}
+    <div class="container">
+        <div class="event-detail">
+            <h2 align="center">{{name_event.name}}</h2>
+        </div>
+        <div class="event-detail"><img src="{{name_event.photo.url}}" alt="{{name_event.name"></div>
+        <div class="event-detail">Дата: {{name_event.date}}</div>
+        <div class="event-detail">Место: {{name_event.address}}</div>
+        <div class="event-detail">Телефон: {{name_event.phone}}</div>
+        <div class="event-detail">Цена: {{name_event.price}}</div>
+        <div class="event-detail">Подробная информация: <a href="{{name_event.link}}">{{name_event.link}}</a></div>
+        <div class="event-detail">Описание: {{name_event.description}}</div>
+    </div>
+{% endblock %}

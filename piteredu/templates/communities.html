@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+{% block title %}Сообщества{% endblock %}
+
+{% block page %}
+<h2> Communities </h2>
+{% endblock %}
+
+{% block name %}
+    <h2 align="center">Сообщества для молодежи Санкт-Петербурга</h2>
+    <h6 align="center">На данной странице, вы сможете найти молодежные сообщества, которые БЕСПЛАТНО помогают развиваться молодежи в различных сферах.</h6>
+{% endblock %}
+
+{% block card %}
+{% endblock %}
+
+{% block content %}
+        <div class="container communities-card-container">
+          <div class="row">
+            {% for item in  variable_community %}
+              <div class="col-sm-4">
+                      <div>
+                      <a href="/communities/{{item.id}}">
+                          <div class="card event-card text-center">
+                              <!-- Изображение (фон карточки) -->
+                              <img class="card-img" style="height: 300px;" src="{{item.photo.url}}" alt="{{item.name}}">
+                          </div><!-- Конец карточки -->
+                      </a>
+                      <h6 align="center">{{item.name}}</h6>
+                  </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+{% endblock %}
+
