@@ -10,9 +10,7 @@ class Resource(models.Model):
     photo = models.ImageField(upload_to="resource/resource_img", default='', blank=True,
                               verbose_name='Изображение')  # not required to field
     contacts = models.URLField(blank=True, verbose_name='Контакты')  # not required to field
-    is_active = models.BooleanField(default=True)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE, blank=False,
-                               verbose_name='Статуы')  # required to field
+    is_active = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'Ресурс'
