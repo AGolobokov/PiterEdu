@@ -12,8 +12,7 @@ class Community(models.Model):
     photo = models.ImageField(upload_to="social/social_img",
                               default='', blank=True, verbose_name='Изображение')  # not required to field
     contacts = models.URLField(blank=True, verbose_name='Контакты')  # not required to field
-    is_active = models.BooleanField(default=True)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE, verbose_name='Статус')  # required to field
+    is_active = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 

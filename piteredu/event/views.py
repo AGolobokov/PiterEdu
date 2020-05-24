@@ -12,7 +12,7 @@ from django.urls import reverse
 def event(request):
     object_event = Event.objects.filter(is_active=True)
     form_event = EventForm(request.POST or None, initial={
-        "form_event": object_event
+        "object_event": object_event
     })
     if request.method == 'POST' and form_event.is_valid():
         form_event.save()
