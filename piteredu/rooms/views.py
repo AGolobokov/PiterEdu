@@ -10,7 +10,7 @@ from django.urls import reverse
 
 def room(request):
     object_room = Rooms.objects.filter(is_active=True)
-    form_room = RoomForm(request.POST or None, initial={
+    form_room = RoomForm(request.POST or None, request.FILES, initial={
         "object_room": object_room
     })
     if request.method == 'POST' and form_room.is_valid():

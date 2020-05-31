@@ -12,7 +12,7 @@ from django.urls import reverse
 
 def resource(request):
     object_resource = Resource.objects.filter(is_active=True)
-    form_resource = ResourceForm(request.POST or None, initial={
+    form_resource = ResourceForm(request.POST or None, request.FILES, initial={
         "object_resource": object_resource
     })
     if request.method == 'POST' and form_resource.is_valid():

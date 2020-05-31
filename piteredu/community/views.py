@@ -11,7 +11,7 @@ from django.urls import reverse
 
 def community(request):
     object_community = Community.objects.filter(is_active=True)
-    form_community = CommunityForm(request.POST or None, initial={
+    form_community = CommunityForm(request.POST or None, request.FILES, initial={
         "object_room": object_community
     })
     if request.method == 'POST' and form_community.is_valid():
