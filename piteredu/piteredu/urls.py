@@ -27,12 +27,15 @@ from social import views as socialviews
 from rooms import views as roomsviews
 from resource import views as resourceviews
 from project import views as projectviews
+from subscriber import views as subscriberviews
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', homeviews.home, name='home'),
-    url(r'^about$', homeviews.about, name='home'),
+    #url(r'^new$', homeviews.subscriber, name='subscriber'),
+    url(r'^about$', homeviews.about, name='about'),
     url(r'^events$', eventviews.event, name='event'),
     url(r'^communities$', communityviews.community, name='community'),
     url(r'^social$', socialviews.social, name='social'),
