@@ -16,8 +16,11 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/test_style.css' %}">
 
+
     <!-- JS -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
 </head>
 <body>
       {% block page %}
@@ -186,8 +189,15 @@
       <footer class="footer my-footer">
           <div class="container down_navigation_container" style="position: top: 0px; left: 0px; width:;">
               <div class="row">
-                  <div class="col-lg-0">
+                  <div class="col-lg-6">
 
+                    <div >
+                        <h5>ОБРАЗОВАТЕЛЬНЫЙ ПЕТЕРБУРГ</h5>
+                        <h6>Портал для молодежи Санкт-Петербурга, где можно найти бесплатные возможности для развития.</h6>
+                        <h6>e-mail: send@piterEdu.ru</h6>
+                    </div>
+
+                    <div >
                       <nav class="nav flex-column">
                           <li class="nav-item ">
                             <a class="nav-link" href="/" style="font-size: 15px;">Главная</a>
@@ -214,6 +224,7 @@
                             <a class="nav-link" href="/about" style="font-size: 15px;">О нас</a>
                           </li>
                       </nav>
+                    </div>
 
                   </div>
           </div>
@@ -224,28 +235,37 @@
       </footer>
       {% endblock %}
 
-      {% block floating_window %}
-      <!--
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <img src="..." class="rounded mr-2" alt="...">
-            <strong class="mr-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="toast-body">
-            Hello, world! This is a toast message.
-          </div>
-        </div>-->
 
+      {% block floating_window %}
       {% endblock %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        $('.click_floating').click(function(){
+          console.log('asd')
+          $('#info').css({"display":"block"})
+
+          $('.close_floating').click(function(){
+            $('#info').css({"display":"none"})
+            })
+        })
+    </script>
+
+    <script>
+        $('.up_alert_window').click(function(){
+          console.log('asd')
+          $('#info').css({"display":"block"})
+
+          $('.close_alert_window').click(function(){
+            $('#info').css({"display":"none"})
+            })
+        })
+    </script>
+
 
 </body>
 </html>

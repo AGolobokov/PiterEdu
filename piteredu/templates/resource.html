@@ -44,7 +44,7 @@
                     <form method="post" enctype="multipart/form-data">
                       {% csrf_token %}
                       {{form_resource.as_p}}
-                        <input type="submit" value="Отправить заявку">
+                        <input type="submit" class="up_alert_window" value="Отправить заявку">
                     </form>
 
                   </div>
@@ -79,5 +79,13 @@
 {% endblock %}
 
 {% block subscribe_2 %}
+{% endblock %}
+
+{% block floating_window %}
+<div id="info" class="info-success"> Ой ой Пумба добавил ресурс!
+    <button type="button" class="close close_alert_window" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 {% endblock %}
 

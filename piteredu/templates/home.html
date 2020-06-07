@@ -32,7 +32,7 @@
                         <form method="post">
                             {% csrf_token %}
                             {{form_subscriber.as_p}}
-                            <input type="submit" value="Подписаться">
+                            <input class="btn-click click_floating" type="submit" value="Подписаться">
                         </form>
                       </div>
                       <!--<div class="modal-footer">
@@ -72,74 +72,82 @@
 
 {% endblock %}
 
+{% block floating_window %}
+<div id="info" class="info-success">Изменения успешно сохранены
+    <button type="button" class="close close_floating" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endblock %}
 
-      {% block footer %}
-      <footer class="footer my-footer">
-              <div class="container down_navigation_container" style="position: top: 0px; left: 0px; width:;">
-                  <div class="row">
-                      <div class="col-lg-0">
 
-                          <nav class="nav flex-column">
-                              <li class="nav-item ">
-                                <a class="nav-link" href="/" style="font-size: 15px;">Главная</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/events" style="font-size: 15px;">Мероприятия</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/communities" style="font-size: 15px;">Сообщества</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/rooms" style="font-size: 15px;">Пространства</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/social" style="font-size: 15px;">Общественникам</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/resource" style="font-size: 15px;">Полезные ресурсы</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/projects" style="font-size: 15px;">Наши проекты</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/about" style="font-size: 15px;">О нас</a>
-                              </li>
-                          </nav>
+{% block footer %}
+<footer class="footer my-footer">
+      <div class="container down_navigation_container" style="position: top: 0px; left: 0px; width:;">
+          <div class="row">
+              <div class="col-lg-0">
 
-                      </div>
-                  </div>
+                  <nav class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="/" style="font-size: 15px;">Главная</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/events" style="font-size: 15px;">Мероприятия</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/communities" style="font-size: 15px;">Сообщества</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/rooms" style="font-size: 15px;">Пространства</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/social" style="font-size: 15px;">Общественникам</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/resource" style="font-size: 15px;">Полезные ресурсы</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/projects" style="font-size: 15px;">Наши проекты</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/about" style="font-size: 15px;">О нас</a>
+                      </li>
+                  </nav>
+
               </div>
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Подписаться
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Подпишись на нас</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form method="post">
-                        {% csrf_token %}
-                        {{form_subscriber.as_p}}
-                        <input type="submit" value="Подписаться">
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="container footer_container">
-            <p class="text-muted">Подпишись на нашу рассылку и получай нашу рассылку на почту</p>
           </div>
-      </footer>
-      {% endblock %}
+      </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Подписаться
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Подпишись на нас</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="post">
+                {% csrf_token %}
+                {{form_subscriber.as_p}}
+                <input class="btn-click click_floating" type="submit" value="Подписаться">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="container footer_container">
+    <p class="text-muted">Подпишись на нашу рассылку и получай нашу рассылку на почту</p>
+  </div>
+</footer>
+{% endblock %}
 
 
 
