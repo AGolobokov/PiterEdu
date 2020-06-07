@@ -14,9 +14,15 @@ def home(request):
     form_subscriber = forms.SubscriberForm(request.POST or None)
     if request.method == 'POST' and form_subscriber.is_valid():
         form_subscriber.save()
-        return HttpResponseRedirect(reverse('home'))
+        #return HttpResponseRedirect(reverse('home'))
     return render(request, 'home.html', {'form_subscriber': form_subscriber})
 
 
 def about(request):
-    return render(request, 'about.html', {})
+    form_subscriber = forms.SubscriberForm(request.POST or None)
+    if request.method == 'POST' and form_subscriber.is_valid():
+        form_subscriber.save()
+    return render(request, 'about.html', {'form_subscriber': form_subscriber})
+
+
+

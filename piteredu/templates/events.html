@@ -13,58 +13,58 @@
 {% endblock %}
 
 {% block content %}
-        <div class="container event-card-container">
-          <div class="row">
+<div class="container event-card-container">
+  <div class="row">
 
-            <!-- Button trigger modal -->
-           <div class="container button-container">
-             <div class="row">
-               <div class="col-sm-4">
-            <button type="button" class="btn btn-primary btn-orange" style="height: 300px; width:360px;" data-toggle="modal" data-target="#exampleModal">
+    <!-- Button trigger modal -->
+   <div class="container button-container">
+     <div class="row">
+       <div class="col-sm-4">
+    <button type="button" class="btn btn-primary btn-orange" style="height: 300px; width:360px;" data-toggle="modal" data-target="#exampleModal">
 
+    </button>
+    <h6 align="center">Добавить мероприятие:</h6>
+       </div>
+     </div>
+   </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Заполнить заявку:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
             </button>
-            <h6 align="center">Добавить мероприятие:</h6>
-               </div>
-             </div>
-           </div>
+          </div>
+          <div class="modal-body">
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Заполнить заявку:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-
-                    <form method="post" enctype="multipart/form-data">
-                      {% csrf_token %}
-                      {{form_event.as_p}}
-                        <input type="submit" class="up_alert_window" value="Отправить заявку">
-                    </form>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {% for item in  variable_event %}
-              <div class="col-sm-4">
-              <a href="/events/{{item.id}}">
-              <div class="card event-card text-center">
-                  <!-- Изображение (фон карточки) -->
-                  <img class="card-img" style="height: 300px;" src="{{item.photo.url}}" alt="{{item.name}}">
-                  <div class="card-img-overlay" style="color:white; font-weight:bold;">{{item.name}}  {{item.date}}</div>
-              </div><!-- Конец карточки -->
-              </a>
-              </div>
-            {% endfor %}
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{form_event.as_p}}
+                <input type="submit" class="up_alert_window" value="Отправить заявку">
+            </form>
 
           </div>
         </div>
+      </div>
+    </div>
+
+    {% for item in  variable_event %}
+      <div class="col-sm-4">
+      <a href="/events/{{item.id}}">
+      <div class="card event-card text-center">
+          <!-- Изображение (фон карточки) -->
+          <img class="card-img" style="height: 300px;" src="{{item.photo.url}}" alt="{{item.name}}">
+          <div class="card-img-overlay" style="color:white; font-weight:bold;">{{item.name}}  {{item.date}}</div>
+      </div><!-- Конец карточки -->
+      </a>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
 {% endblock %}
 
 {% block request %}

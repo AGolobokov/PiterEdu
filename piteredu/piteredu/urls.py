@@ -34,7 +34,6 @@ from subscriber import views as subscriberviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', homeviews.home, name='home'),
-    #url(r'^new$', homeviews.subscriber, name='subscriber'),
     url(r'^about$', homeviews.about, name='about'),
     url(r'^events$', eventviews.event, name='event'),
     url(r'^communities$', communityviews.community, name='community'),
