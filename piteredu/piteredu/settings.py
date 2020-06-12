@@ -27,7 +27,7 @@ SECRET_KEY = '-pbr+$df!!ycgh(4fm#w3c^1!3sjqme21+0c!q08(@m$f28ag&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['secure-fjord-57884.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -143,3 +143,9 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
