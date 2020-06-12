@@ -1,1 +1,1 @@
-web: gunicorn name_project.wsgi --log-file -
+web: gunicorn piteredu.wsgi --log-file -
