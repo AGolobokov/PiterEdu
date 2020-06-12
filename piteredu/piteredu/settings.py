@@ -144,7 +144,9 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 import dj_database_url
 db_from_env = dj_database_url.config()
