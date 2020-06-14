@@ -27,7 +27,7 @@ SECRET_KEY = '-pbr+$df!!ycgh(4fm#w3c^1!3sjqme21+0c!q08(@m$f28ag&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['boiling-basin-41109.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['guarded-brook-92235.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
