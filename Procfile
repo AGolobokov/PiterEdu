@@ -1,1 +1,0 @@
-web: gunicorn piteredu.wsgi --log-file -
