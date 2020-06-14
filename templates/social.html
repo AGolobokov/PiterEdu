@@ -1,0 +1,99 @@
+{% extends 'base.html'%}
+
+{% block title %}Сообщество{% endblock %}
+
+{% block page %}
+<h2> social </h2>
+{% endblock %}
+
+{% block name %}
+{% endblock %}
+
+{% block card %}
+{% endblock %}
+
+{% block content %}
+<h2>НА ДАННЫЙ МОМЕНТ, РАЗДЕЛ В РАЗРАБОТКЕ, ЕСЛИ У ВАС ЕСТЬ ПОЖЕЛАНИЯ ИЛИ ИДЕИ, МОЖЕТЕ ОТПРАВИТЬ ИХ НАМ НА ПОЧТУ: SEND@PITEREDU.RU</h2>
+{% endblock %}
+
+{% block request %}
+{% endblock %}
+
+{% block subscribe_1 %}
+{% endblock %}
+
+{% block subscribe_2 %}
+{% endblock %}
+
+{% block footer %}
+<footer class="footer my-footer">
+      <div class="container down_navigation_container" style="position: top: 0px; left: 0px; width:;">
+          <div class="row">
+              <div class="col-lg-0">
+
+                  <nav class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="/" style="font-size: 15px;">Главная</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/events" style="font-size: 15px;">Мероприятия</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/communities" style="font-size: 15px;">Сообщества</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/rooms" style="font-size: 15px;">Пространства</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/social" style="font-size: 15px;">Общественникам</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/resource" style="font-size: 15px;">Полезные ресурсы</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/projects" style="font-size: 15px;">Наши проекты</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/about" style="font-size: 15px;">О нас</a>
+                      </li>
+                  </nav>
+
+              </div>
+          </div>
+      </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Подписаться
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Подпишись на нас</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="post">
+                {% csrf_token %}
+                {{form_subscriber.as_p}}
+                <input class="btn-click click_floating" type="submit" value="Подписаться">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="container footer_container">
+    <p class="text-muted">Подпишись на нашу рассылку и получай нашу рассылку на почту</p>
+  </div>
+</footer>
+{% endblock %}
+
+
+
+
+

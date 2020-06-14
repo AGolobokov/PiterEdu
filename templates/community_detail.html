@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block title %}Страница отдельного сообщества{% endblock %}
+
+{% block page %}
+<h2> Страница отдельного сообщества </h2>
+{% endblock %}
+
+{% block name %}
+
+{% endblock %}
+
+{% block card %}
+    <div class="container">
+        <div class="community-detail">
+            <h2 align="center">{{name_community.name}}</h2>
+        </div>
+        <div class="event-detail"><img src="{{name_community.photo.url}}" alt="{{name_community.name"></div>
+        <div class="event-detail">Описание: {{name_community.description}}</div>
+
+        <div class="event-detail">Место: {{name_community.address}}</div>
+        <div class="event-detail">Телефон: {{name_community.phone}}</div>
+        <div class="event-detail">Контакты: <a href="{{name_community.contacts}}">{{name_community.contacts}}</a></div>
+
+    </div>
+{% endblock %}
+
+{% block request %}
+{% endblock %}
+
+{% block subscribe_1 %}
+{% endblock %}
+
+{% block subscribe_2 %}
+{% endblock %}
+
+{% block floating_window %}
+{% endblock %}

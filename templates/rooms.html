@@ -1,0 +1,95 @@
+{% extends 'base.html'%}
+
+{% block title %}Пространства{% endblock %}
+
+{% block page %}
+<h2> rooms </h2>
+{% endblock %}
+
+{% block name %}
+    <h2 align="center">Пространства для досуга</h2>
+    <h6 align="center">На данной странице, вы сможете найти пространства Санкт-Петербурга.</h6>
+
+{% endblock %}
+
+
+{% block card %}
+
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="container room-card-container">
+          <div class="row">
+
+
+            <!-- Button trigger modal -->
+           <div class="container button-container">
+             <div class="row">
+               <div class="col-sm-4">
+            <button type="button" class="btn btn-primary btn-orange" style="height: 300px; width:360px;" data-toggle="modal" data-target="#exampleModal">
+
+            </button>
+            <h6 align="center">Добавить пространство:</h6>
+               </div>
+             </div>
+           </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Заполнить заявку:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {{form_room.as_p}}
+                        <input type="submit" class="up_alert_window" value="Отправить заявку">
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% for item in  variable_room %}
+              <div class="col-sm-4">
+                      <div>
+                      <a href="/rooms/{{item.id}}">
+                          <div class="card event-card text-center">
+                              <!-- Изображение (фон карточки) -->
+                              <img class="card-img" style="height: 300px;" src="{{item.photo.url}}" alt="{{item.name}}">
+                          </div><!-- Конец карточки -->
+                      </a>
+                      <h6 align="center">{{item.name}}</h6>
+                  </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+{% endblock %}
+
+{% block request %}
+{% endblock %}
+
+{% block subscribe_1 %}
+{% endblock %}
+
+{% block subscribe_2 %}
+{% endblock %}
+
+{% block floating_window %}
+<div id="info" class="info-success"> Ой ой Пумба добавил пространство!
+    <button type="button" class="close close_alert_window" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endblock %}
