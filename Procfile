@@ -1,1 +1,1 @@
-web: gunicorn piteredu.piteredu.wsgi --log-file -
+web: gunicorn piteredu.piteredu.wsgi piteredu.piteredu.settings  --log-file -
